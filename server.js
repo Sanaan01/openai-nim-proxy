@@ -142,14 +142,6 @@ app.post('/v1/chat/completions', async (req, res) => {
 
     const nimModel = resolveNimModel(model);
 
-    // 🔍 LOG WHICH MODEL IS ACTUALLY USED
-    console.log(
-      '[NIM PROXY]',
-      'Requested model:', model,
-      '→ NIM model:', nimModel,
-      '| stream =', !!stream
-    );
-
     // Build NIM request (OpenAI-compatible body + extra thinking flag)
     const nimRequestBody = {
       model: nimModel,
@@ -222,12 +214,8 @@ app.post('/v1/chat/completions', async (req, res) => {
               } else {
                 // Wrap reasoning_content in <think>...</think> once
                 let newContent = '';
-                const hasReasoning =
-                  typeof delta.reasoning_content === 'string' &&
-                  delta.reasoning_content.length > 0;
-                const hasContent =
-                  typeof delta.content === 'string' &&
-                  delta.content.length > 0;
+                const hasReasoning = typeof delta.reasoning_content === 'string' && delta.reasoning_content.length > 0;
+                const hasContent = typeof delta.content === 'string' && delta.content.length > 0;
 
                 if (hasReasoning) {
                   if (!reasoningOpen) {
