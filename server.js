@@ -17,7 +17,7 @@ const SHOW_REASONING = false;
 
 // 🔥 THINKING MODE TOGGLE - Enables thinking for specific models that support it
 // This sets chat_template_kwargs: { thinking: true } in the NIM request
-const ENABLE_THINKING_MODE = false;
+const ENABLE_THINKING_MODE = true;
 
 // Default fallback model if nothing matches
 const DEFAULT_FALLBACK_MODEL = 'meta/llama-3.1-70b-instruct';
