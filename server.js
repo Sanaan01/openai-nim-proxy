@@ -31,6 +31,7 @@ const MODEL_MAPPING = {
   'claude-3-opus': 'openai/gpt-oss-120b',
   'claude-3-sonnet': 'openai/gpt-oss-20b',
   'gemini-pro': 'qwen/qwen3-next-80b-a3b-thinking'
+  'deepseek-r1-0528': 'deepseek-ai/deepseek-r1-0528'
 };
 
 // Axios instance for NIM
