@@ -15,7 +15,7 @@ const NIM_API_KEY = process.env.NIM_API_KEY;
 const SHOW_REASONING = false;
 
 // 🔥 THINKING MODE TOGGLE - Enables thinking for specific models that support it
-const ENABLE_THINKING_MODE = false;
+const ENABLE_THINKING_MODE = true;
 
 // Default fallback model if nothing matches
 const DEFAULT_FALLBACK_MODEL = 'meta/llama-3.1-70b-instruct';
